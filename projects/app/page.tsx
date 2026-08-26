@@ -12,10 +12,10 @@ export default function Page() {
             Hi! My name is Guilherme,
           </h1>
           <p className="mb-4">
-            but you can call me Guibs. I graduated in Systems Development from ETEC and am currently studying Internet Systems at Descomplica.
+            but you can call me Guibs. I'm a CRM Developer with Mid & Senior experience at Enext Consultoria, currently studying Digital Games at Fatec.
           </p>
         </div>
-        <img src="https://avatars.githubusercontent.com/u/36766110?v=4&size=116" className="w-[116px] h-[116px] rounded-full m-auto object-cover max-md:mb-4" />
+        <img src="https://avatars.githubusercontent.com/u/36766110?v=4&size=116" alt="Guilherme Salviano" className="w-[116px] h-[116px] rounded-full m-auto object-cover max-md:mb-4" />
       </div>
       <p className="mb-4">
         Let’s connect and create something amazing!

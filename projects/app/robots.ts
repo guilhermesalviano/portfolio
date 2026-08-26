@@ -8,7 +8,6 @@ export default function robots() {
       {
         userAgent: '*',
         allow: "/",
-        disallow: ["/countdown", "/time-to-a-year"],
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,

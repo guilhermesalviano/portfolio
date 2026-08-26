@@ -1,4 +1,6 @@
-export const baseUrl = 'https://guilhermesalviano.dev'
+export const baseUrl = 'https://guilhermesalviano.github.io'
+
+export const dynamic = 'force-static'
 
 export default async function sitemap() {
 

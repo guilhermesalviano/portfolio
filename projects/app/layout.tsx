@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: 'CRM Developer & Software Developer | Guilherme Salviano',
     locale: 'pt_BR',
     type: 'website',
-    images: [{ url: 'https://guilhermesalviano.dev/og' }],
+    images: [{ url: 'https://guilhermesalviano.github.io/og' }],
   },
   robots: {
     index: true,
@@ -40,15 +40,15 @@ export const metadata: Metadata = {
     'application/ld+json': JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'Organization',
-      url: 'https://guilhermesalviano.dev',
-      logo: 'https://guilhermesalviano.dev/logo.png',
+      url: 'https://guilhermesalviano.github.io',
+      logo: 'https://guilhermesalviano.github.io/logo.png',
     }),
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Guilherme Salviano | CRM Developer & Software Developer',
     description: 'A CRM Developer with Mid & Senior experience at Enext Consultoria, currently studying Digital Games at Fatec.',
-    images: ['https://guilhermesalviano.dev/og'],
+    images: ['https://guilhermesalviano.github.io/og'],
   },
 }
 

@@ -1,5 +1,7 @@
 import { baseUrl } from 'app/sitemap'
 
+export const dynamic = 'force-static'
+
 export async function GET() {
   const rssFeed = `<?xml version="1.0" encoding="UTF-8" ?>
   <rss version="2.0">

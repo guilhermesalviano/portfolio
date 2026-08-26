@@ -19,8 +19,8 @@ function withUtm(url: string): string {
 
 const projects: Project[] = [
   {
-    href: "https://github.com/guilhermesalviano/koris-agent",
-    label: "Koris agent",
+    href: "https://guilhermesalviano.github.io/koris/",
+    label: "Koris - An AI Assistant",
     startDate: "2026-05-15",
   },
   {

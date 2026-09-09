@@ -3,12 +3,12 @@ import { content } from 'app/lib/content'
 import { pageMetadata } from 'app/lib/metadata'
 
 export const metadata = pageMetadata({
-  locale: 'en',
+  locale: 'pt',
   page: '',
-  title: content.en.home.title,
-  description: content.en.home.description,
+  title: content.pt.home.title,
+  description: content.pt.home.description,
 })
 
 export default function Page() {
-  return <HomePage locale="en" />
+  return <HomePage locale="pt" />
 }

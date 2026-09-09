@@ -2,24 +2,63 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import { baseUrl } from './sitemap'
+import { JsonLd } from './components/json-ld'
+import { personSchema, websiteSchema } from './lib/schema'
+import { allSkills, baseUrl, siteConfig } from './lib/site'
 import './global.css'
+
+const description =
+  'Guilherme Salviano — CRM Developer specialising in Salesforce Marketing Cloud: AMPscript, SSJS, Journey Builder and Email Studio. Based in Brazil.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'CRM Developer & Software Developer | Guilherme Salviano',
-    template: '%s | CRM Developer & Software Developer | Guilherme Salviano',
+    default: `${siteConfig.name} — ${siteConfig.headline}`,
+    template: `%s | ${siteConfig.name}`,
   },
-  description: 'A CRM Developer with Mid & Senior experience at Enext Consultoria, currently studying Digital Games at Fatec.',
+  description,
+  applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.name, url: baseUrl }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  category: 'technology',
+  keywords: [
+    'Guilherme Salviano',
+    'Guibs',
+    'CRM Developer',
+    'Salesforce Marketing Cloud developer',
+    'SFMC developer',
+    'AMPscript developer',
+    'marketing automation developer',
+    'desenvolvedor Salesforce Marketing Cloud',
+    'desenvolvedor CRM',
+    'Enext Consultoria',
+    ...allSkills,
+  ],
+  // Canonical URLs are set per page — a canonical here would be inherited by
+  // every route and make them all claim the home page URL.
+  alternates: {
+    types: {
+      'application/rss+xml': `${baseUrl}/rss.xml`,
+    },
+  },
   openGraph: {
-    title: 'Guilherme Salviano | CRM Developer & Software Developer',
-    description: 'A CRM Developer with Mid & Senior experience at Enext Consultoria, currently studying Digital Games at Fatec.',
+    title: `${siteConfig.name} — ${siteConfig.headline}`,
+    description,
     url: baseUrl,
-    siteName: 'CRM Developer & Software Developer | Guilherme Salviano',
+    siteName: `${siteConfig.name} — ${siteConfig.headline}`,
     locale: 'en_US',
+    alternateLocale: ['pt_BR'],
     type: 'website',
-    images: [{ url: `${baseUrl}/og` }],
+    images: [
+      {
+        url: `${baseUrl}/og.png`,
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} — ${siteConfig.headline}`,
+        type: 'image/png',
+      },
+    ],
   },
   robots: {
     index: true,
@@ -32,18 +71,11 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  other: {
-    'application/ld+json': JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'Organization',
-      url: baseUrl,
-    }),
-  },
   twitter: {
     card: 'summary_large_image',
-    title: 'Guilherme Salviano | CRM Developer & Software Developer',
-    description: 'A CRM Developer with Mid & Senior experience at Enext Consultoria, currently studying Digital Games at Fatec.',
-    images: [`${baseUrl}/og`],
+    title: `${siteConfig.name} — ${siteConfig.headline}`,
+    description,
+    images: [`${baseUrl}/og.png`],
   },
 }
 
@@ -75,6 +107,7 @@ export default function RootLayout({
       )}
     >
       <body className="antialiased">
+        <JsonLd data={[personSchema, websiteSchema]} />
         <main>
           {children}
           <Analytics />

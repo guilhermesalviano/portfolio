@@ -1,4 +1,4 @@
-export const baseUrl = 'https://guilhermesalviano.github.io'
+export const baseUrl = 'https://imguibs.dev'
 
 export const siteConfig = {
   baseUrl,
@@ -77,4 +77,9 @@ export function languageAlternates(page: '' | '/about' | '/projects') {
     'pt-BR': pathFor('pt', page),
     'x-default': pathFor('en', page),
   }
+}
+
+/** Absolute URL for a site-relative path. The home page has no trailing slash. */
+export function absoluteUrl(path: string): string {
+  return `${baseUrl}${path === '/' ? '' : path}`
 }

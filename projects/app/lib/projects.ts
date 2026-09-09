@@ -11,7 +11,7 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    href: "https://guilhermesalviano.github.io/koris/",
+    href: "https://hub.koaris.com",
     label: "Koris - An AI Assistant",
     startDate: "2026-05-15",
     description:

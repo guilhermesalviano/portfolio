@@ -1,7 +1,5 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
 import { JsonLd } from './components/json-ld'
 import { personSchema, websiteSchema } from './lib/schema'
 import { allSkills, baseUrl, siteConfig } from './lib/site'
@@ -108,11 +106,7 @@ export default function RootLayout({
     >
       <body className="antialiased">
         <JsonLd data={[personSchema, websiteSchema]} />
-        <main>
-          {children}
-          <Analytics />
-          <SpeedInsights />
-        </main>
+        <main>{children}</main>
       </body>
     </html>
   )

@@ -5,7 +5,6 @@ Personal portfolio site for Guilherme Salviano, built with Next.js (App Router).
 - Home, Projects, and About pages, in English (`/`) and Brazilian Portuguese (`/pt`)
 - Static export (`output: 'export'`), deployed to GitHub Pages
 - Tailwind v4, Geist font
-- Vercel Speed Insights / Web Analytics
 
 ## SEO & GEO
 

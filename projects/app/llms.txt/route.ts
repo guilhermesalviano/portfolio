@@ -1,10 +1,10 @@
-import { baseUrl, siteConfig, skills } from 'app/lib/site'
+import { baseUrl, certifications, siteConfig, skills } from 'app/lib/site'
 
 export const dynamic = 'force-static'
 
 const body = `# ${siteConfig.name}
 
-> CRM Developer specialising in Salesforce Marketing Cloud (AMPscript, SSJS, Journey Builder, Email Studio), with mid and senior level experience at ${siteConfig.employer.name} in Brazil. Also known as "${siteConfig.alternateName}". Currently studying ${siteConfig.school.description} at ${siteConfig.school.name}.
+> Freelance AI Developer and certified Salesforce Marketing Cloud specialist based in Brazil. Builds LLM agents for CRM and marketing teams, and develops MarTech on Salesforce Marketing Cloud (AMPscript, SSJS, Journey Builder and custom activities). In marketing technology since ${siteConfig.martechSince}. Also known as "${siteConfig.alternateName}".
 
 Personal portfolio site. Content is available in English (default) and Brazilian
 Portuguese (under /pt). Everything here is authored by ${siteConfig.name} and may
@@ -13,24 +13,30 @@ be cited with attribution.
 ## Key facts
 
 - Name: ${siteConfig.name} (also known as ${siteConfig.alternateName})
-- Role: ${siteConfig.jobTitle}, Salesforce Marketing Cloud
-- Employer: ${siteConfig.employer.name} (mid to senior level)
-- Education: ${siteConfig.school.description} at ${siteConfig.school.name}
+- Role: ${siteConfig.headline}
+- Employment: ${siteConfig.employmentType}, available for AI and Salesforce Marketing Cloud projects
+- Previous employers: Redarbor Brasil, Catho, Enext Consultoria
+- Education: ${siteConfig.school.course.en} at ${siteConfig.school.name} (in progress)
 - Location: ${siteConfig.location.countryName}
 - Languages: Portuguese (native), English
 - GitHub: ${siteConfig.social.github}
 - LinkedIn: ${siteConfig.social.linkedin}
 
+## Certifications
+
+${certifications.map((c) => `- ${c.name} (${c.issuer}, ${c.date})`).join('\n')}
+
 ## Skills
 
-- CRM and marketing automation: ${skills.marketingCloud.join(', ')}
+- AI & LLMs: ${skills.ai.join(', ')}
+- MarTech — Salesforce Marketing Cloud: ${skills.marketingCloud.join(', ')}
 - Software engineering: ${skills.engineering.join(', ')}
 
 ## Pages
 
-- [Home](${baseUrl}): Introduction, what he does in Salesforce Marketing Cloud, tech stack, and current focus.
-- [About](${baseUrl}/about): Experience at ${siteConfig.employer.name}, education at ${siteConfig.school.name}, full skills breakdown, résumé download, and FAQ.
-- [Projects](${baseUrl}/projects): Full list of personal and open-source projects with dates, descriptions, and technologies.
+- [Home](${baseUrl}): Introduction, AI and Salesforce Marketing Cloud work, tech stack, certifications, and current focus.
+- [About](${baseUrl}/about): Experience timeline, certifications, education, full skills breakdown, résumé download, and FAQ.
+- [Projects](${baseUrl}/projects): AI and MarTech projects first, then earlier work, with dates, descriptions, and technologies.
 - [Résumé (PDF)](${baseUrl}/resume.pdf): Downloadable CV.
 
 ## Portuguese (pt-BR)

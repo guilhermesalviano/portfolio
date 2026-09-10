@@ -1,6 +1,7 @@
 import { content, faq } from 'app/lib/content'
+import { experience } from 'app/lib/experience'
 import { projects } from 'app/lib/projects'
-import { baseUrl, siteConfig, skills } from 'app/lib/site'
+import { baseUrl, certifications, siteConfig, skills } from 'app/lib/site'
 
 export const dynamic = 'force-static'
 
@@ -20,6 +21,20 @@ const projectLines = projects
     return parts.join('\n')
   })
   .join('\n\n')
+
+const experienceLines = experience
+  .map((job) => {
+    const end = job.endDate ? job.endDate.slice(0, 7) : 'present'
+    return `- ${job.company} — ${job.role} (${job.startDate.slice(0, 7)} to ${end}): ${job.summary}`
+  })
+  .join('\n')
+
+const certificationLines = certifications
+  .map((c) => {
+    const id = c.credentialId ? `, credential ID ${c.credentialId}` : ''
+    return `- ${c.name} (${c.issuer}, ${c.date}${id})`
+  })
+  .join('\n')
 
 const faqLines = faq.en
   .map(({ question, answer }) => `### ${question}\n\n${answer}`)
@@ -47,6 +62,7 @@ ${home.whatIDoSecond}
 
 ### ${home.stackTitle}
 
+- ${home.stackAiLabel}: ${skills.ai.join(', ')}
 - ${home.stackCrmLabel}: ${skills.marketingCloud.join(', ')}
 - ${home.stackEngineeringLabel}: ${skills.engineering.join(', ')}
 
@@ -61,6 +77,12 @@ ${about.intro}
 ### ${about.experienceTitle}
 
 ${about.experience}
+
+${experienceLines}
+
+### ${about.certificationsTitle}
+
+${certificationLines}
 
 ### ${about.educationTitle}
 

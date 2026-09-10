@@ -6,16 +6,16 @@ export const siteConfig = {
   alternateName: 'Guibs',
   firstName: 'Guilherme',
   lastName: 'Salviano',
-  jobTitle: 'CRM Developer',
-  headline: 'Salesforce Marketing Cloud & CRM Developer',
+  jobTitle: 'AI Developer',
+  headline: 'AI Developer & Salesforce Marketing Cloud Specialist',
   image: 'https://avatars.githubusercontent.com/u/36766110?v=4',
-  employer: {
-    name: 'Enext Consultoria',
-    url: 'https://www.enext.com.br/',
-  },
+  employmentType: 'Freelance',
+  /** In MarTech since the 2018 CRM apprenticeship at Catho. */
+  martechSince: 2018,
   school: {
-    name: 'Fatec',
-    description: 'Digital Games',
+    name: 'Descomplica',
+    url: 'https://descomplica.com.br/',
+    course: { en: 'Internet Systems (Sistemas para Internet)', pt: 'Sistemas para Internet' },
   },
   location: {
     country: 'BR',
@@ -29,30 +29,78 @@ export const siteConfig = {
 
 /** Skills used for `knowsAbout` in JSON-LD and for the visible tech lists. */
 export const skills = {
+  ai: [
+    'LLM agents',
+    'Tool / function calling',
+    'Agent memory',
+    'Prompt engineering',
+    'OpenRouter',
+    'Ollama',
+    'NVIDIA NIM',
+    'Bun',
+  ],
   marketingCloud: [
     'Salesforce Marketing Cloud',
     'AMPscript',
     'Server-Side JavaScript (SSJS)',
     'Journey Builder',
+    'Journey Builder Custom Activities',
     'Email Studio',
     'Content Builder',
     'Automation Studio',
     'Data Extensions',
     'SQL',
+    'Segment',
   ],
   engineering: [
     'TypeScript',
-    'JavaScript',
     'Node.js',
-    'React',
-    'Next.js',
+    'Go',
+    'AWS (Lambda, SQS, EventBridge)',
+    'RabbitMQ',
     'Docker',
     'Terraform',
-    'AWS',
+    'React',
+    'Next.js',
   ],
 } as const
 
-export const allSkills: string[] = [...skills.marketingCloud, ...skills.engineering]
+export const allSkills: string[] = [...skills.ai, ...skills.marketingCloud, ...skills.engineering]
+
+export type Certification = {
+  name: string
+  issuer: string
+  /** `YYYY-MM` */
+  date: string
+  credentialId?: string
+}
+
+/** Rendered on the home and about pages and emitted as `hasCredential` in JSON-LD. */
+export const certifications: Certification[] = [
+  {
+    name: 'Salesforce Certified Marketing Cloud Administrator',
+    issuer: 'Salesforce',
+    date: '2021-07',
+    credentialId: '22349555',
+  },
+  {
+    name: 'Salesforce Certified Marketing Cloud Developer',
+    issuer: 'Salesforce',
+    date: '2021-05',
+    credentialId: '22176479',
+  },
+  {
+    name: 'Salesforce Certified Marketing Cloud Email Specialist',
+    issuer: 'Salesforce',
+    date: '2021-01',
+    credentialId: '21826055',
+  },
+  {
+    name: 'Segment Certified Marketer',
+    issuer: 'Twilio Segment',
+    date: '2025-02',
+  },
+]
 
 export type Locale = 'en' | 'pt'
 

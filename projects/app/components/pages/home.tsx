@@ -4,7 +4,7 @@ import { Navbar } from 'app/components/nav'
 import { JsonLd } from 'app/components/json-ld'
 import { content } from 'app/lib/content'
 import { breadcrumbSchema, pageSchema } from 'app/lib/schema'
-import { locales, pathFor, siteConfig, skills, type Locale } from 'app/lib/site'
+import { certifications, locales, pathFor, siteConfig, skills, type Locale } from 'app/lib/site'
 
 function Tags({ items }: { items: readonly string[] }) {
   return (
@@ -72,6 +72,10 @@ export function HomePage({ locale }: { locale: Locale }) {
           {t.stackTitle}
         </h2>
         <h3 className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
+          {t.stackAiLabel}
+        </h3>
+        <Tags items={skills.ai} />
+        <h3 className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
           {t.stackCrmLabel}
         </h3>
         <Tags items={skills.marketingCloud} />
@@ -79,6 +83,17 @@ export function HomePage({ locale }: { locale: Locale }) {
           {t.stackEngineeringLabel}
         </h3>
         <Tags items={skills.engineering} />
+
+        <h2 className="mb-4 mt-8 text-xl font-semibold tracking-tighter">
+          {t.certificationsTitle}
+        </h2>
+        <ul className="mb-4 list-disc pl-6">
+          {certifications.map((certification) => (
+            <li key={certification.name} className="mb-1">
+              {certification.name}
+            </li>
+          ))}
+        </ul>
 
         <h2 className="mb-4 mt-8 text-xl font-semibold tracking-tighter">
           {t.currentlyTitle}

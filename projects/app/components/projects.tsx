@@ -1,4 +1,5 @@
 import { formatDate } from "app/utils/formatDate"
+import { content } from "app/lib/content"
 import { projects, type Project } from "app/lib/projects"
 import { locales, type Locale } from "app/lib/site"
 import Link from "next/link"
@@ -22,7 +23,7 @@ function ProjectRow({
     locale === "pt" ? project.descriptionPt ?? project.description : project.description
   const intl = locales[locale].intl
   const resolvedHref = href ? withUtm(href) : undefined
-  const present = locale === "pt" ? "Atual" : "Present"
+  const present = content[locale].projects.present
   const dateRange = endDate
     ? `${formatDate(startDate, false, intl)} - ${formatDate(endDate, false, intl)}`
     : `${formatDate(startDate, false, intl)} - ${present}`
@@ -68,12 +69,27 @@ function ProjectRow({
   )
 }
 
-export function Projects({ locale = "en" }: { locale?: Locale }) {
+function ProjectList({ list, locale }: { list: Project[]; locale: Locale }) {
   return (
     <div className="flex flex-col gap-5">
-      {projects.map((project) => (
+      {list.map((project) => (
         <ProjectRow key={project.label} project={project} locale={locale} />
       ))}
     </div>
+  )
+}
+
+export function Projects({ locale = "en" }: { locale?: Locale }) {
+  const featured = projects.filter((project) => project.featured)
+  const earlier = projects.filter((project) => !project.featured)
+
+  return (
+    <>
+      <ProjectList list={featured} locale={locale} />
+      <h2 className="mb-5 mt-10 text-xl font-semibold tracking-tighter">
+        {content[locale].projects.earlierTitle}
+      </h2>
+      <ProjectList list={earlier} locale={locale} />
+    </>
   )
 }

@@ -3,8 +3,10 @@ import Footer from 'app/components/footer'
 import { Navbar } from 'app/components/nav'
 import { JsonLd } from 'app/components/json-ld'
 import { content, faq } from 'app/lib/content'
+import { experience } from 'app/lib/experience'
 import { breadcrumbSchema, faqSchema, pageSchema } from 'app/lib/schema'
-import { locales, pathFor, skills, type Locale } from 'app/lib/site'
+import { certifications, locales, pathFor, skills, type Locale } from 'app/lib/site'
+import { formatDate } from 'app/utils/formatDate'
 
 function ArrowIcon() {
   return (
@@ -28,6 +30,13 @@ export function AboutPage({ locale }: { locale: Locale }) {
   const t = content[locale].about
   const questions = faq[locale]
   const lang = locales[locale].htmlLang
+  const intl = locales[locale].intl
+  const stack = content[locale].home
+  const skillGroups = [
+    { label: stack.stackAiLabel, items: skills.ai },
+    { label: stack.stackCrmLabel, items: skills.marketingCloud },
+    { label: stack.stackEngineeringLabel, items: skills.engineering },
+  ]
 
   const schema = [
     pageSchema({
@@ -58,7 +67,47 @@ export function AboutPage({ locale }: { locale: Locale }) {
         <h2 className="mb-4 mt-8 text-xl font-semibold tracking-tighter">
           {t.experienceTitle}
         </h2>
-        <p className="mb-4">{t.experience}</p>
+        <p className="mb-6">{t.experience}</p>
+        <ol className="mb-4 flex flex-col gap-5 list-none p-0">
+          {experience.map((job) => {
+            const role = locale === 'pt' ? job.rolePt ?? job.role : job.role
+            const start = formatDate(job.startDate, false, intl)
+            const end = job.endDate ? formatDate(job.endDate, false, intl) : t.present
+
+            return (
+              <li key={`${job.company}-${job.startDate}`} className="flex flex-col gap-1">
+                <div className="flex max-sm:flex-col flex-row sm:space-x-2">
+                  <p className="text-neutral-600 dark:text-neutral-400 w-[160px] min-w-20 shrink-0 tabular-nums">
+                    {start} - {end}
+                  </p>
+                  <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
+                    {job.company} · {role}
+                  </p>
+                </div>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400 sm:ml-[168px]">
+                  {locale === 'pt' ? job.summaryPt : job.summary}
+                </p>
+              </li>
+            )
+          })}
+        </ol>
+
+        <h2 className="mb-4 mt-8 text-xl font-semibold tracking-tighter">
+          {t.certificationsTitle}
+        </h2>
+        <ul className="mb-4 list-disc pl-6">
+          {certifications.map((certification) => (
+            <li key={certification.name} className="mb-1">
+              {certification.name}{' '}
+              <span className="text-sm text-neutral-600 dark:text-neutral-400">
+                — {formatDate(`${certification.date}-01`, false, intl)}
+                {certification.credentialId
+                  ? ` · ${t.credentialId} ${certification.credentialId}`
+                  : ''}
+              </span>
+            </li>
+          ))}
+        </ul>
 
         <h2 className="mb-4 mt-8 text-xl font-semibold tracking-tighter">
           {t.educationTitle}
@@ -69,16 +118,11 @@ export function AboutPage({ locale }: { locale: Locale }) {
           {t.skillsTitle}
         </h2>
         <ul className="mb-4 list-disc pl-6">
-          <li className="mb-1">
-            <strong className="font-medium">{content[locale].home.stackCrmLabel}:</strong>{' '}
-            {skills.marketingCloud.join(', ')}
-          </li>
-          <li>
-            <strong className="font-medium">
-              {content[locale].home.stackEngineeringLabel}:
-            </strong>{' '}
-            {skills.engineering.join(', ')}
-          </li>
+          {skillGroups.map(({ label, items }) => (
+            <li key={label} className="mb-1">
+              <strong className="font-medium">{label}:</strong> {items.join(', ')}
+            </li>
+          ))}
         </ul>
 
         <h2 className="mb-4 mt-8 text-xl font-semibold tracking-tighter">

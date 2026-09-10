@@ -6,7 +6,7 @@ import { allSkills, baseUrl, siteConfig } from './lib/site'
 import './global.css'
 
 const description =
-  'Guilherme Salviano — CRM Developer specialising in Salesforce Marketing Cloud: AMPscript, SSJS, Journey Builder and Email Studio. Based in Brazil.'
+  'Guilherme Salviano — freelance AI Developer and Salesforce Marketing Cloud specialist for MarTech: LLM agents, AMPscript, SSJS, Journey Builder and custom activities. Based in Brazil.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -23,14 +23,20 @@ export const metadata: Metadata = {
   keywords: [
     'Guilherme Salviano',
     'Guibs',
-    'CRM Developer',
+    'AI Developer',
+    'AI agent developer',
+    'LLM developer',
+    'freelance AI developer',
     'Salesforce Marketing Cloud developer',
     'SFMC developer',
+    'freelance SFMC developer',
+    'MarTech developer',
     'AMPscript developer',
+    'Journey Builder custom activity',
     'marketing automation developer',
+    'desenvolvedor de IA',
     'desenvolvedor Salesforce Marketing Cloud',
-    'desenvolvedor CRM',
-    'Enext Consultoria',
+    'especialista Salesforce Marketing Cloud',
     ...allSkills,
   ],
   // Canonical URLs are set per page — a canonical here would be inherited by

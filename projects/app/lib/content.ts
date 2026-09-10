@@ -1,4 +1,4 @@
-import { skills, type Locale } from './site'
+import { certifications, skills, type Locale } from './site'
 
 /**
  * Visible copy for both locales, kept side by side so the English and
@@ -9,43 +9,48 @@ export const content = {
     nav: { home: 'home', projects: 'projects', about: 'about' },
     switchLocale: 'português',
     home: {
-      title: 'Salesforce Marketing Cloud & CRM Developer',
+      title: 'AI Developer & Salesforce Marketing Cloud Specialist',
       description:
-        'Guilherme Salviano — CRM Developer specialising in Salesforce Marketing Cloud: AMPscript, SSJS, Journey Builder and Email Studio. Based in Brazil.',
-      h1: 'Guilherme Salviano — Salesforce Marketing Cloud & CRM Developer',
+        'Guilherme Salviano — freelance AI Developer and Salesforce Marketing Cloud specialist for MarTech: LLM agents, AMPscript, SSJS, Journey Builder and custom activities. Based in Brazil.',
+      h1: 'Guilherme Salviano — AI Developer & Salesforce Marketing Cloud Specialist',
       intro:
-        "Hi! You can call me Guibs. I'm a CRM Developer with mid and senior level experience at Enext Consultoria, currently studying Digital Games at Fatec.",
+        "Hi! You can call me Guibs. I'm a freelance AI Developer and a certified Salesforce Marketing Cloud specialist, working in marketing technology since 2018.",
       whatIDoTitle: 'What I do',
       whatIDo:
-        'I build and maintain marketing automation on Salesforce Marketing Cloud. Day to day that means writing AMPscript and server-side JavaScript for dynamic email content, designing customer journeys in Journey Builder, modelling data extensions and querying them with SQL, and automating recurring campaign work in Automation Studio.',
+        'I build AI agents and LLM-powered features for CRM and marketing teams: agents that call tools, keep memory between conversations, and answer questions straight from campaign data — open rates, segment trends, day-over-day performance — instead of waiting on a report.',
       whatIDoSecond:
-        'Outside of CRM work I write TypeScript and Node.js, ship small React and Next.js apps, and deploy them with Docker and Terraform on AWS.',
+        'On the MarTech side I work in Salesforce Marketing Cloud: AMPscript and server-side JavaScript for dynamic content, customer journeys in Journey Builder, full-stack custom activities, data extensions and SQL, Automation Studio, and API integrations that connect Marketing Cloud to the rest of the stack.',
       stackTitle: 'Tech I work with',
-      stackCrmLabel: 'CRM & marketing automation',
+      stackAiLabel: 'AI & LLMs',
+      stackCrmLabel: 'MarTech: Salesforce Marketing Cloud',
       stackEngineeringLabel: 'Software engineering',
+      certificationsTitle: 'Certifications',
       currentlyTitle: 'Currently',
       currently:
-        'Working as a CRM Developer at Enext Consultoria, studying Digital Games at Fatec, and building side projects — most recently Koris, an autonomous AI assistant framework.',
-      cta: 'Let’s connect and create something amazing!',
+        'Freelancing on AI and Salesforce Marketing Cloud projects, building Koris — an autonomous AI assistant framework — and agent-crm, an AI agent for CRM teams, and studying Internet Systems at Descomplica.',
+      cta: 'Need an AI agent or a Marketing Cloud build? I’m available for freelance projects — let’s talk.',
       seeProjects: 'See my projects',
       readAbout: 'More about me',
     },
     about: {
       title: 'About',
       description:
-        'Guilherme Salviano — Salesforce Marketing Cloud and CRM Developer at Enext Consultoria, studying Digital Games at Fatec. Experience, skills and résumé.',
+        'Guilherme Salviano — freelance AI Developer and certified Salesforce Marketing Cloud specialist. Experience, certifications, skills and résumé.',
       h1: 'About',
       intro:
-        "I'm Guilherme, but you can call me Guibs. I'm a CRM Developer specialising in Salesforce Marketing Cloud, with mid and senior level experience at Enext Consultoria, currently studying Digital Games at Fatec.",
+        "I'm Guilherme, but you can call me Guibs. I'm a freelance AI Developer and Salesforce Marketing Cloud specialist. I started in a CRM team in 2018 and have been building marketing technology ever since — now with LLMs in the loop.",
       experienceTitle: 'Experience',
       experience:
-        'At Enext Consultoria I work as a CRM Developer on Salesforce Marketing Cloud, progressing from mid to senior level. The work covers AMPscript and SSJS development, Journey Builder orchestration, Email Studio and Content Builder templates, data extension modelling, SQL queries, and Automation Studio scheduling for client campaigns.',
+        'Most of my career sits where marketing and engineering meet: Journey Builder custom activities for a digital bank, APIs feeding Salesforce Marketing Cloud, Segment integrations, and high-volume email and push pipelines. Today I bring that MarTech background to AI — LLM agents that work with CRM and campaign data.',
+      present: 'Present',
       educationTitle: 'Education',
       education:
-        'I study Digital Games at Fatec. Games are also where I started building things — a 2D horror platformer in Construct 2 and a branching visual novel in Ren’Py both came out of that interest.',
+        'I study Internet Systems (Sistemas para Internet) at Descomplica.',
+      certificationsTitle: 'Certifications',
+      credentialId: 'Credential ID',
       skillsTitle: 'Skills',
       projectsTitle: 'Projects',
-      projectsBlurb: 'Outside of client work I build personal tools and side projects — see the',
+      projectsBlurb: 'Outside of client work I build AI agents and personal tools — see the',
       projectsLink: 'projects page',
       projectsBlurbEnd: 'for the full list.',
       resumeTitle: 'Résumé',
@@ -55,10 +60,12 @@ export const content = {
     projects: {
       title: 'Projects',
       description:
-        'Projects by Guilherme Salviano — an AI assistant framework, a self-hosted dashboard, a URL shortener on AWS, an auth service, a React design system and games.',
+        'Projects by Guilherme Salviano — AI agent frameworks, an AI agent for CRM teams, marketing tools and a self-hosted dashboard, plus earlier work.',
       h1: 'My Projects',
       intro:
-        'A running list of things I have built — side projects, tools, design systems and games. Most are open source on GitHub.',
+        'Things I have built, with AI and MarTech work first. Most are open source on GitHub.',
+      earlierTitle: 'Earlier work',
+      present: 'Present',
     },
     notFound: {
       h1: '404',
@@ -71,43 +78,47 @@ export const content = {
     nav: { home: 'início', projects: 'projetos', about: 'sobre' },
     switchLocale: 'english',
     home: {
-      title: 'Desenvolvedor Salesforce Marketing Cloud & CRM',
+      title: 'Desenvolvedor de IA & Especialista em Salesforce Marketing Cloud',
       description:
-        'Guilherme Salviano — Desenvolvedor de CRM especializado em Salesforce Marketing Cloud: AMPscript, SSJS, Journey Builder e Email Studio. Brasil.',
-      h1: 'Guilherme Salviano — Desenvolvedor Salesforce Marketing Cloud & CRM',
+        'Guilherme Salviano — Desenvolvedor de IA freelancer e especialista em Salesforce Marketing Cloud para MarTech: agentes com LLM, AMPscript, SSJS, Journey Builder e custom activities. Brasil.',
+      h1: 'Guilherme Salviano — Desenvolvedor de IA & Especialista em Salesforce Marketing Cloud',
       intro:
-        'Olá! Pode me chamar de Guibs. Sou Desenvolvedor de CRM com experiência pleno e sênior na Enext Consultoria e atualmente estudo Jogos Digitais na Fatec.',
+        'Olá! Pode me chamar de Guibs. Sou Desenvolvedor de IA freelancer e especialista certificado em Salesforce Marketing Cloud, trabalhando com tecnologia de marketing desde 2018.',
       whatIDoTitle: 'O que eu faço',
       whatIDo:
-        'Construo e mantenho automações de marketing no Salesforce Marketing Cloud. No dia a dia isso significa escrever AMPscript e JavaScript server-side para conteúdo dinâmico de e-mail, desenhar jornadas de cliente no Journey Builder, modelar data extensions e consultá-las com SQL, e automatizar rotinas de campanha no Automation Studio.',
+        'Construo agentes de IA e funcionalidades com LLM para times de CRM e marketing: agentes que usam ferramentas, guardam memória entre conversas e respondem direto a partir dos dados de campanha — taxas de abertura, tendências por segmento, desempenho dia a dia — sem esperar por um relatório.',
       whatIDoSecond:
-        'Fora do trabalho com CRM, escrevo TypeScript e Node.js, publico pequenas aplicações React e Next.js e faço deploy com Docker e Terraform na AWS.',
+        'Na parte de MarTech trabalho com Salesforce Marketing Cloud: AMPscript e JavaScript server-side para conteúdo dinâmico, jornadas de cliente no Journey Builder, custom activities full-stack, data extensions e SQL, Automation Studio e integrações via API que conectam o Marketing Cloud ao restante da stack.',
       stackTitle: 'Tecnologias que uso',
-      stackCrmLabel: 'CRM e automação de marketing',
+      stackAiLabel: 'IA & LLMs',
+      stackCrmLabel: 'MarTech: Salesforce Marketing Cloud',
       stackEngineeringLabel: 'Engenharia de software',
+      certificationsTitle: 'Certificações',
       currentlyTitle: 'Atualmente',
       currently:
-        'Trabalhando como Desenvolvedor de CRM na Enext Consultoria, estudando Jogos Digitais na Fatec e criando projetos pessoais — mais recentemente o Koris, um framework de assistente de IA autônomo.',
-      cta: 'Vamos nos conectar e criar algo incrível!',
+        'Atuando como freelancer em projetos de IA e Salesforce Marketing Cloud, construindo o Koris — um framework de assistente de IA autônomo — e o agent-crm, um agente de IA para times de CRM, e estudando Sistemas para Internet na Descomplica.',
+      cta: 'Precisa de um agente de IA ou de um projeto em Marketing Cloud? Estou disponível para freelas — vamos conversar.',
       seeProjects: 'Ver meus projetos',
       readAbout: 'Mais sobre mim',
     },
     about: {
       title: 'Sobre',
       description:
-        'Guilherme Salviano — Desenvolvedor Salesforce Marketing Cloud e CRM na Enext Consultoria, estudante de Jogos Digitais na Fatec. Experiência e currículo.',
+        'Guilherme Salviano — Desenvolvedor de IA freelancer e especialista certificado em Salesforce Marketing Cloud. Experiência, certificações, habilidades e currículo.',
       h1: 'Sobre',
       intro:
-        'Sou o Guilherme, mas pode me chamar de Guibs. Sou Desenvolvedor de CRM especializado em Salesforce Marketing Cloud, com experiência pleno e sênior na Enext Consultoria, e atualmente estudo Jogos Digitais na Fatec.',
+        'Sou o Guilherme, mas pode me chamar de Guibs. Sou Desenvolvedor de IA freelancer e especialista em Salesforce Marketing Cloud. Comecei em um time de CRM em 2018 e desde então construo tecnologia de marketing — agora com LLMs no processo.',
       experienceTitle: 'Experiência',
       experience:
-        'Na Enext Consultoria atuo como Desenvolvedor de CRM em Salesforce Marketing Cloud, tendo evoluído de pleno para sênior. O trabalho envolve desenvolvimento em AMPscript e SSJS, orquestração no Journey Builder, templates no Email Studio e Content Builder, modelagem de data extensions, consultas SQL e agendamentos no Automation Studio para campanhas de clientes.',
+        'A maior parte da minha carreira está onde marketing e engenharia se encontram: custom activities do Journey Builder para um banco digital, APIs alimentando o Salesforce Marketing Cloud, integrações com Segment e pipelines de e-mail e push em alto volume. Hoje levo essa bagagem de MarTech para a IA — agentes com LLM que trabalham com dados de CRM e de campanhas.',
+      present: 'Atual',
       educationTitle: 'Formação',
-      education:
-        'Estudo Jogos Digitais na Fatec. Foi também com jogos que comecei a construir coisas — um platformer 2D de terror no Construct 2 e uma visual novel de narrativa ramificada em Ren’Py nasceram desse interesse.',
+      education: 'Estudo Sistemas para Internet na Descomplica.',
+      certificationsTitle: 'Certificações',
+      credentialId: 'ID da credencial',
       skillsTitle: 'Habilidades',
       projectsTitle: 'Projetos',
-      projectsBlurb: 'Fora do trabalho com clientes, crio ferramentas e projetos pessoais — veja a',
+      projectsBlurb: 'Fora do trabalho com clientes, crio agentes de IA e ferramentas pessoais — veja a',
       projectsLink: 'página de projetos',
       projectsBlurbEnd: 'para a lista completa.',
       resumeTitle: 'Currículo',
@@ -117,10 +128,12 @@ export const content = {
     projects: {
       title: 'Projetos',
       description:
-        'Projetos de Guilherme Salviano — framework de assistente de IA, painel self-hosted, encurtador de URL na AWS, serviço de autenticação e design system.',
+        'Projetos de Guilherme Salviano — frameworks de agentes de IA, um agente de IA para times de CRM, ferramentas de marketing e um painel self-hosted, além de trabalhos anteriores.',
       h1: 'Meus Projetos',
       intro:
-        'Uma lista contínua do que eu construí — projetos pessoais, ferramentas, design systems e jogos. A maioria é open source no GitHub.',
+        'O que eu construí, com os trabalhos de IA e MarTech primeiro. A maioria é open source no GitHub.',
+      earlierTitle: 'Trabalhos anteriores',
+      present: 'Atual',
     },
     notFound: {
       h1: '404',
@@ -131,58 +144,68 @@ export const content = {
   },
 } as const
 
+const certificationNames = certifications.map((c) => c.name).join(', ')
+
 /** Question/answer pairs rendered on the about page and fed to FAQPage schema. */
 export const faq: Record<Locale, { question: string; answer: string }[]> = {
   en: [
     {
       question: 'Who is Guilherme Salviano?',
       answer:
-        'Guilherme Salviano, also known as Guibs, is a Brazilian CRM Developer specialising in Salesforce Marketing Cloud. He has mid and senior level experience at Enext Consultoria and is currently studying Digital Games at Fatec.',
+        'Guilherme Salviano, also known as Guibs, is a Brazilian freelance AI Developer and Salesforce Marketing Cloud specialist. He has worked in marketing technology since 2018, at companies including Catho, Enext Consultoria and Redarbor, and studies Internet Systems at Descomplica.',
     },
     {
-      question: 'What does he do as a CRM Developer?',
+      question: 'What does he build as an AI Developer?',
       answer:
-        'He builds marketing automation on Salesforce Marketing Cloud: AMPscript and server-side JavaScript for dynamic email content, customer journeys in Journey Builder, data extension modelling and SQL, Email Studio and Content Builder templates, and scheduled automations in Automation Studio.',
+        'AI agents and LLM-powered features for CRM and marketing teams: agents with tool calling, persistent memory and scheduled background tasks, and agents that read campaign analytics and answer questions about open rates, segments and trends. His open-source Koris framework runs the same agent across Telegram, WhatsApp, a terminal UI and a web dashboard.',
+    },
+    {
+      question: 'What does he do in Salesforce Marketing Cloud?',
+      answer:
+        'MarTech development on Salesforce Marketing Cloud: AMPscript and server-side JavaScript, Journey Builder journeys and full-stack custom activities, Email Studio and Content Builder, data extensions and SQL, Automation Studio, and API integrations between Marketing Cloud and other systems.',
+    },
+    {
+      question: 'Which certifications does he hold?',
+      answer: `${certificationNames}.`,
     },
     {
       question: 'Which technologies does he work with?',
-      answer: `Salesforce Marketing Cloud (${skills.marketingCloud.slice(1).join(', ')}) on the CRM side, and ${skills.engineering.join(', ')} for software engineering.`,
+      answer: `AI: ${skills.ai.join(', ')}. MarTech: ${skills.marketingCloud.join(', ')}. Software engineering: ${skills.engineering.join(', ')}.`,
     },
     {
       question: 'Is he available for freelance or contract work?',
       answer:
-        'The best way to reach Guilherme is through LinkedIn or GitHub, both linked in the footer of every page on this site.',
-    },
-    {
-      question: 'Where can I see his projects and résumé?',
-      answer:
-        'His projects are listed on the projects page of this site and published on GitHub, and his résumé is downloadable as a PDF from the about page.',
+        'Yes. Guilherme takes freelance and contract projects in AI development and Salesforce Marketing Cloud. Reach him through LinkedIn or GitHub, both linked in the footer of every page.',
     },
   ],
   pt: [
     {
       question: 'Quem é Guilherme Salviano?',
       answer:
-        'Guilherme Salviano, também conhecido como Guibs, é um Desenvolvedor de CRM brasileiro especializado em Salesforce Marketing Cloud. Tem experiência pleno e sênior na Enext Consultoria e atualmente estuda Jogos Digitais na Fatec.',
+        'Guilherme Salviano, também conhecido como Guibs, é um Desenvolvedor de IA freelancer e especialista em Salesforce Marketing Cloud brasileiro. Trabalha com tecnologia de marketing desde 2018, em empresas como Catho, Enext Consultoria e Redarbor, e estuda Sistemas para Internet na Descomplica.',
     },
     {
-      question: 'O que ele faz como Desenvolvedor de CRM?',
+      question: 'O que ele constrói como Desenvolvedor de IA?',
       answer:
-        'Ele constrói automações de marketing no Salesforce Marketing Cloud: AMPscript e JavaScript server-side para conteúdo dinâmico de e-mail, jornadas de cliente no Journey Builder, modelagem de data extensions e SQL, templates no Email Studio e Content Builder, e automações agendadas no Automation Studio.',
+        'Agentes de IA e funcionalidades com LLM para times de CRM e marketing: agentes com chamada de ferramentas, memória persistente e tarefas agendadas em segundo plano, e agentes que leem analytics de campanhas e respondem perguntas sobre taxas de abertura, segmentos e tendências. O framework open source Koris roda o mesmo agente no Telegram, WhatsApp, em uma interface de terminal e em um painel web.',
+    },
+    {
+      question: 'O que ele faz no Salesforce Marketing Cloud?',
+      answer:
+        'Desenvolvimento de MarTech no Salesforce Marketing Cloud: AMPscript e JavaScript server-side, jornadas e custom activities full-stack no Journey Builder, Email Studio e Content Builder, data extensions e SQL, Automation Studio e integrações via API entre o Marketing Cloud e outros sistemas.',
+    },
+    {
+      question: 'Quais certificações ele possui?',
+      answer: `${certificationNames}.`,
     },
     {
       question: 'Com quais tecnologias ele trabalha?',
-      answer: `Salesforce Marketing Cloud (${skills.marketingCloud.slice(1).join(', ')}) na parte de CRM, e ${skills.engineering.join(', ')} em engenharia de software.`,
+      answer: `IA: ${skills.ai.join(', ')}. MarTech: ${skills.marketingCloud.join(', ')}. Engenharia de software: ${skills.engineering.join(', ')}.`,
     },
     {
       question: 'Ele está disponível para freelance ou contrato?',
       answer:
-        'A melhor forma de falar com o Guilherme é pelo LinkedIn ou GitHub, ambos no rodapé de todas as páginas deste site.',
-    },
-    {
-      question: 'Onde posso ver os projetos e o currículo dele?',
-      answer:
-        'Os projetos estão listados na página de projetos deste site e publicados no GitHub, e o currículo pode ser baixado em PDF na página sobre.',
+        'Sim. O Guilherme aceita projetos freelance e contratos em desenvolvimento de IA e Salesforce Marketing Cloud. Fale com ele pelo LinkedIn ou GitHub, ambos no rodapé de todas as páginas.',
     },
   ],
 }

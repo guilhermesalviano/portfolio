@@ -7,22 +7,36 @@ export type Project = {
   /** Portuguese description; falls back to `description` when absent. */
   descriptionPt?: string
   tags?: string[]
+  /** Featured projects are listed first; the rest go under "Earlier work". */
+  featured?: boolean
 }
 
 export const projects: Project[] = [
+  {
+    label: "agent-crm - AI Agent for CRM Teams",
+    startDate: "2026-09-03",
+    description:
+      "AI agent for CRM and marketing teams: a terminal UI over OpenRouter LLMs with tool calling for Gmail and campaign analytics — open rates, segment trends and read-only SQL over newsletter data — and hot-reloaded markdown skills.",
+    descriptionPt:
+      "Agente de IA para times de CRM e marketing: interface de terminal sobre LLMs via OpenRouter com chamada de ferramentas para Gmail e analytics de campanhas — taxas de abertura, tendências por segmento e SQL somente leitura sobre dados de newsletter — e skills em markdown recarregadas em tempo real.",
+    tags: ["TypeScript", "Bun", "OpenRouter", "LLM agents", "Tool calling"],
+    featured: true,
+  },
   {
     href: "https://hub.koaris.com",
     label: "Koris - An AI Assistant",
     startDate: "2026-05-15",
     description:
-      "Autonomous AI agent framework spanning Telegram, WhatsApp, a terminal UI, and a web dashboard, with persistent SQLite memory and cron-driven background tasks.",
+      "Autonomous AI agent framework with tool execution (shell, HTTP, web search), persistent SQLite memory, cron-driven sub-agents and swappable LLM providers (Ollama, NVIDIA) — one agent core across Telegram, WhatsApp, a terminal UI and a web dashboard.",
     descriptionPt:
-      "Framework de agente de IA autônomo que abrange Telegram, WhatsApp, uma interface de terminal e um painel web, com memória persistente em SQLite e tarefas agendadas via cron.",
-    tags: ["TypeScript", "Node.js", "React", "Vite", "SQLite", "Vitest"],
+      "Framework de agente de IA autônomo com execução de ferramentas (shell, HTTP, busca na web), memória persistente em SQLite, sub-agentes agendados via cron e provedores de LLM intercambiáveis (Ollama, NVIDIA) — um único núcleo de agente no Telegram, WhatsApp, interface de terminal e painel web.",
+    tags: ["TypeScript", "Node.js", "LLM agents", "Ollama", "SQLite", "React"],
+    featured: true,
   },
   {
     href: "https://github.com/guilhermesalviano/casaos-coredash",
     label: "Personal Projects - Coredash",
+    featured: true,
     startDate: "2026-03-05",
     description:
       "Self-hosted personal dashboard for automation, system monitoring, and habit tracking, built for low-cost home-lab hardware.",
@@ -44,13 +58,14 @@ export const projects: Project[] = [
   {
     href: "https://koaris.com/",
     label: "Koaris Tools",
+    featured: true,
     startDate: "2025-02-24",
     endDate: "2025-03-03",
     description:
       "Suite of ten free browser-based marketing/dev utilities — UTM builder, QR code generator, Base64/URL/HTML converters, favicon generator, image compressor, Pomodoro timer.",
     descriptionPt:
       "Conjunto de dez utilitários gratuitos de marketing e desenvolvimento no navegador — construtor de UTM, gerador de QR code, conversores Base64/URL/HTML, gerador de favicon, compressor de imagens e timer Pomodoro.",
-    tags: ["Web tools"],
+    tags: ["MarTech", "Web tools"],
   },
   {
     href: "https://github.com/guilhermesalviano/koaris-auth",

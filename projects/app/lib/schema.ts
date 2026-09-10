@@ -1,4 +1,13 @@
-import { allSkills, baseUrl, siteConfig, type Locale, locales, pathFor } from './site'
+import {
+  allSkills,
+  baseUrl,
+  certifications,
+  siteConfig,
+  skills,
+  type Locale,
+  locales,
+  pathFor,
+} from './site'
 import type { Project } from './projects'
 
 const PERSON_ID = `${baseUrl}/#person`
@@ -17,17 +26,27 @@ export const personSchema = {
   url: baseUrl,
   image: siteConfig.image,
   jobTitle: siteConfig.jobTitle,
-  description:
-    'CRM Developer specialising in Salesforce Marketing Cloud, with mid and senior level experience at Enext Consultoria, currently studying Digital Games at Fatec.',
-  worksFor: {
-    '@type': 'Organization',
-    name: siteConfig.employer.name,
-    url: siteConfig.employer.url,
-  },
-  alumniOf: {
-    '@type': 'CollegeOrUniversity',
-    name: siteConfig.school.name,
-  },
+  description: `Freelance AI Developer and certified Salesforce Marketing Cloud specialist, working in marketing technology since ${siteConfig.martechSince}. Builds LLM agents for CRM and marketing teams. Studies ${siteConfig.school.course.en} at ${siteConfig.school.name}.`,
+  hasOccupation: [
+    {
+      '@type': 'Occupation',
+      name: 'AI Developer',
+      skills: [...skills.ai].join(', '),
+    },
+    {
+      '@type': 'Occupation',
+      name: 'Salesforce Marketing Cloud Developer',
+      skills: [...skills.marketingCloud].join(', '),
+    },
+  ],
+  hasCredential: certifications.map((certification) => ({
+    '@type': 'EducationalOccupationalCredential',
+    name: certification.name,
+    credentialCategory: 'certification',
+    dateCreated: certification.date,
+    recognizedBy: { '@type': 'Organization', name: certification.issuer },
+    ...(certification.credentialId ? { identifier: certification.credentialId } : {}),
+  })),
   knowsAbout: allSkills,
   knowsLanguage: [
     { '@type': 'Language', name: 'Portuguese', alternateName: 'pt-BR' },
@@ -46,7 +65,7 @@ export const websiteSchema = {
   url: baseUrl,
   name: `${siteConfig.name} — ${siteConfig.headline}`,
   description:
-    'Portfolio of Guilherme Salviano, a Salesforce Marketing Cloud and CRM Developer based in Brazil.',
+    'Portfolio of Guilherme Salviano, a freelance AI Developer and Salesforce Marketing Cloud specialist based in Brazil.',
   publisher: { '@id': PERSON_ID },
   inLanguage: ['en-US', 'pt-BR'],
 }

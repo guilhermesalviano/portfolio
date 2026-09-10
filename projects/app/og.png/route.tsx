@@ -29,7 +29,7 @@ export function GET() {
           <span>{siteConfig.headline}</span>
         </div>
         <div tw="flex items-center justify-center text-xl text-center max-w-2xl px-8 pt-4">
-          <span>AMPscript · SSJS · Journey Builder · Email Studio</span>
+          <span>AI Agents · LLMs · Salesforce Marketing Cloud · MarTech</span>
         </div>
       </div>
     ),

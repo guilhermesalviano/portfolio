@@ -69,33 +69,6 @@ export function HomePage({ locale }: { locale: Locale }) {
         <p className="mb-4">{t.whatIDoSecond}</p>
 
         <h2 className="mb-4 mt-8 text-xl font-semibold tracking-tighter">
-          {t.stackTitle}
-        </h2>
-        <h3 className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-          {t.stackAiLabel}
-        </h3>
-        <Tags items={skills.ai} />
-        <h3 className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-          {t.stackCrmLabel}
-        </h3>
-        <Tags items={skills.marketingCloud} />
-        <h3 className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-          {t.stackEngineeringLabel}
-        </h3>
-        <Tags items={skills.engineering} />
-
-        <h2 className="mb-4 mt-8 text-xl font-semibold tracking-tighter">
-          {t.certificationsTitle}
-        </h2>
-        <ul className="mb-4 list-disc pl-6">
-          {certifications.map((certification) => (
-            <li key={certification.name} className="mb-1">
-              {certification.name}
-            </li>
-          ))}
-        </ul>
-
-        <h2 className="mb-4 mt-8 text-xl font-semibold tracking-tighter">
           {t.currentlyTitle}
         </h2>
         <p className="mb-4">{t.currently}</p>
@@ -115,6 +88,34 @@ export function HomePage({ locale }: { locale: Locale }) {
             {t.readAbout}
           </Link>
         </p>
+
+        <h2 className="mb-4 mt-8 text-xl font-semibold tracking-tighter">
+          {t.certificationsTitle}
+        </h2>
+        <ul className="mb-4 list-disc pl-6">
+          {certifications.map((certification) => (
+            <li key={certification.name} className="mb-1">
+              {certification.name}
+            </li>
+          ))}
+        </ul>
+
+        <h2 className="mb-4 mt-8 text-xl font-semibold tracking-tighter">
+          {t.stackTitle}
+        </h2>
+        <h3 className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
+          {t.stackAiLabel}
+        </h3>
+        <Tags items={skills.ai} />
+        <h3 className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
+          {t.stackCrmLabel}
+        </h3>
+        <Tags items={skills.marketingCloud} />
+        <h3 className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
+          {t.stackEngineeringLabel}
+        </h3>
+        <Tags items={skills.engineering} />
+
       </section>
       <Footer />
     </div>

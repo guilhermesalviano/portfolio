@@ -23,7 +23,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    href: "https://hub.koaris.com",
+    href: "https://imkoris.com",
     label: "Koris - An AI Assistant",
     startDate: "2026-05-15",
     description:
